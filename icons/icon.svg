@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m216,120l0,88a8,8 0 0 1 -8,8l-160,0a8,8 0 0 1 -8,-8l0,-160a8,8 0 0 1 8,-8l88,0" fill="none" id="svg_4" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+  <rect fill="none" height="256" id="svg_1" transform="matrix(1 0 0 1 0 0) translate(-89.3028 2.96084)" width="256"/>
+  <polygon fill="#e6a008" id="svg_2" points="119.60380117595196,160 95.85380117595196,160 95.85380117595196,136.25 167.10380117595196,65 190.85380117595196,88.75 119.60380117595196,160 " stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+  <rect fill="#eb5040" height="33.528569" id="svg_7" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" transform="matrix(1 0 0 1 0 0) rotate(-44.9666 189.258 66.5855)" width="28.926631" x="174.794988" y="49.821235"/>
+ </g>
+</svg>
