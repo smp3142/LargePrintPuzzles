@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CluelessCrossword.PDF\CluelessCrossword.PDF.csproj" />
     <ProjectReference Include="..\CluelessCrossword\CluelessCrossword.csproj" />
   </ItemGroup>

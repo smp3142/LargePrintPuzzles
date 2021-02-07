@@ -1,0 +1,78 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="420" d:DesignHeight="400"
+        x:Class="LPPava.MainWindow"
+        Title="Large Print Puzzles" Height="400" Width="420" CanResize="false" FontSize="16">
+  <Grid Margin="20">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="1*" />
+      <ColumnDefinition Width="1*" />
+    </Grid.ColumnDefinitions>
+    <TextBlock Text="File To Make" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" />
+    <TextBlock Text="Difficulty" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" />
+    <TextBlock Text="Number of Pages" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" />
+    <TextBlock Text="Auto Open PDF" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" />
+
+    <ComboBox x:Name="GameType" Grid.Row="0" Grid.Column="1"
+              VerticalAlignment="Center" SelectedIndex="0">
+      <ComboBoxItem Content="Clueless Crosswords" />
+      <ComboBoxItem Content="Clueless Word List" />
+    </ComboBox>
+    <ComboBox x:Name="Difficulty" Grid.Row="1" Grid.Column="1"
+              VerticalAlignment="Center" SelectedIndex="1">
+      <ComboBoxItem Content="Easy" />
+      <ComboBoxItem Content="Normal" />
+      <ComboBoxItem Content="Hard" />
+    </ComboBox>
+    <ComboBox x:Name="NumberOfPages" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"
+              MaxDropDownHeight="200" SelectedIndex="19">
+      <ComboBoxItem Content="1" />
+      <ComboBoxItem Content="2" />
+      <ComboBoxItem Content="3" />
+      <ComboBoxItem Content="4" />
+      <ComboBoxItem Content="5" />
+      <ComboBoxItem Content="6" />
+      <ComboBoxItem Content="7" />
+      <ComboBoxItem Content="8" />
+      <ComboBoxItem Content="9" />
+      <ComboBoxItem Content="10" />
+      <ComboBoxItem Content="11" />
+      <ComboBoxItem Content="12" />
+      <ComboBoxItem Content="13" />
+      <ComboBoxItem Content="14" />
+      <ComboBoxItem Content="15" />
+      <ComboBoxItem Content="16" />
+      <ComboBoxItem Content="17" />
+      <ComboBoxItem Content="18" />
+      <ComboBoxItem Content="19" />
+      <ComboBoxItem Content="20" />
+    </ComboBox>
+    <CheckBox x:Name="AutoOpenPDF" Grid.Row="3" Grid.Column="1"
+              VerticalAlignment="Center" HorizontalAlignment="Left"
+              IsChecked="True" />
+
+    <Button x:Name="BtnMakePuzzle" Grid.Row="4" Grid.ColumnSpan="2"
+            Content="Make PDF"
+            VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="MakePuzzle_Click">
+    </Button>
+
+    <TextBlock x:Name="TxtFileStatus" Text="Ready" Grid.Row="5" Grid.ColumnSpan="2"
+               HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+    <ProgressBar x:Name="IndProgressBar" Grid.Row="6" Grid.ColumnSpan="2" VerticalAlignment="Center"
+                 IsIndeterminate="True" IsVisible="False" />
+    <TextBox x:Name="TxtPathAndFile" Grid.Row="6" Grid.ColumnSpan="2"
+             Text="" HorizontalAlignment="Center" TextWrapping="Wrap"
+             IsReadOnly="True" BorderThickness="0" IsVisible="False" />
+  </Grid>
+</Window>
