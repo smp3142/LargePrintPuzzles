@@ -14,12 +14,12 @@ namespace CluelessCrossword.PDF
 
         public static byte[] PDF(CluelessCrosswords cluelessCrosswords)
         {
+            using MemoryStream memoryStream = new MemoryStream();
+
             FontProvider fontProvider = new FontProvider();
             fontProvider.AddFont(Properties.Resources.notomono);
             ConverterProperties properties = new ConverterProperties();
             properties.SetFontProvider(fontProvider);
-
-            MemoryStream pdfStream = new MemoryStream();
 
             int counter = 0;
             StringBuilder html = new StringBuilder();
@@ -50,18 +50,18 @@ namespace CluelessCrossword.PDF
             html.Append("</body>");
             html.Append("</html>");
 
-            HtmlConverter.ConvertToPdf(html.ToString(), pdfStream, properties);
-            return pdfStream.ToArray();
+            HtmlConverter.ConvertToPdf(html.ToString(), memoryStream, properties);
+            return memoryStream.ToArray();
         }
 
         public static byte[] ShortWords()
         {
+            using MemoryStream memoryStream = new MemoryStream();
             FontProvider fontProvider = new FontProvider();
             fontProvider.AddFont(Properties.Resources.notomono);
             ConverterProperties properties = new ConverterProperties();
             properties.SetFontProvider(fontProvider);
 
-            MemoryStream memoryStream = new MemoryStream();
             StringBuilder html = new StringBuilder();
             html.Append("<!DOCTYPE html>");
             html.Append("<html>");

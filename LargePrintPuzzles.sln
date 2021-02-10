@@ -7,19 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LargePrintPuzzles", "LargeP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargePrintPuzzles.macOs", "LargePrintPuzzles.macOs\LargePrintPuzzles.macOs.csproj", "{A566F73D-A31A-4548-A664-9A4D6172C7B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LargePrintPuzzles.Blazor", "LargePrintPuzzles.Blazor\LargePrintPuzzles.Blazor.csproj", "{8C7BFEA4-C2BF-445D-96C6-3C09F8707346}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LargePrintPuzzles.Terminal", "LargePrintPuzzles.Terminal\LargePrintPuzzles.Terminal.csproj", "{383CF806-DA63-4882-B52C-B406C4557E65}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CluelessCrossword", "CluelessCrossword\CluelessCrossword.csproj", "{99D51DDB-3286-4848-B131-92430BEE63A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CluelessCrossword.PDF", "CluelessCrossword.PDF\CluelessCrossword.PDF.csproj", "{A7D6A1E1-0485-4E95-A865-EFA79FDD6ADC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargePrintPuzzles.WPF", "LargePrintPuzzles.WPF\LargePrintPuzzles.WPF.csproj", "{51635563-D44E-4162-8431-40C4B3DFC612}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LargePrintPuzzles.WPF", "LargePrintPuzzles.WPF\LargePrintPuzzles.WPF.csproj", "{51635563-D44E-4162-8431-40C4B3DFC612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesData", "GamesData\GamesData.csproj", "{011235CE-D01C-4842-BDD9-2A240AA0AB82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamesData", "GamesData\GamesData.csproj", "{011235CE-D01C-4842-BDD9-2A240AA0AB82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{D45107B7-8ABA-4654-AEF7-9F48C63BE2DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{D45107B7-8ABA-4654-AEF7-9F48C63BE2DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{A566F73D-A31A-4548-A664-9A4D6172C7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A566F73D-A31A-4548-A664-9A4D6172C7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A566F73D-A31A-4548-A664-9A4D6172C7B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8C7BFEA4-C2BF-445D-96C6-3C09F8707346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C7BFEA4-C2BF-445D-96C6-3C09F8707346}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C7BFEA4-C2BF-445D-96C6-3C09F8707346}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C7BFEA4-C2BF-445D-96C6-3C09F8707346}.Release|Any CPU.Build.0 = Release|Any CPU
 		{383CF806-DA63-4882-B52C-B406C4557E65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{383CF806-DA63-4882-B52C-B406C4557E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{383CF806-DA63-4882-B52C-B406C4557E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
