@@ -1,4 +1,4 @@
-﻿using CluelessCrossword;
+using CluelessCrossword;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
