@@ -5,11 +5,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CluelessCrossword
+namespace CluelessCrosswords
 {
     public enum Difficulty { Easy = 8, Normal = 4, Hard = 2 };
 
-    public class CluelessCrosswords : IEnumerable
+    public class Games : IEnumerable
     {
         public Puzzle[] Puzzles { get; private set; }
         public List<string> usedWords;
@@ -22,7 +22,7 @@ namespace CluelessCrossword
 
         // TODO: Verify that only 1 solution exists?
 
-        public CluelessCrosswords(int numberOfPuzzles, Difficulty difficulty)
+        public Games(int numberOfPuzzles, Difficulty difficulty)
         {
             Puzzles = new Puzzle[numberOfPuzzles];
             wordSource = GamesData.WordData.AllWords;

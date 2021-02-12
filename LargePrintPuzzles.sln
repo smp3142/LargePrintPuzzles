@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargePrintPuzzles.macOs", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LargePrintPuzzles.Terminal", "LargePrintPuzzles.Terminal\LargePrintPuzzles.Terminal.csproj", "{383CF806-DA63-4882-B52C-B406C4557E65}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CluelessCrossword", "CluelessCrossword\CluelessCrossword.csproj", "{99D51DDB-3286-4848-B131-92430BEE63A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CluelessCrosswords", "CluelessCrossword\CluelessCrosswords.csproj", "{99D51DDB-3286-4848-B131-92430BEE63A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CluelessCrossword.PDF", "CluelessCrossword.PDF\CluelessCrossword.PDF.csproj", "{A7D6A1E1-0485-4E95-A865-EFA79FDD6ADC}"
 EndProject

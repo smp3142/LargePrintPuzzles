@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace CluelessCrossword
+namespace CluelessCrosswords
 {
     public struct Puzzle
     {

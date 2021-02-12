@@ -49,18 +49,18 @@ namespace LargePrintPuzzles.WPF
                         pdfFullPath = System.IO.Path.Combine(
                             Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
                             pdfFileName);
-                        CluelessCrossword.Difficulty cluelessDifficulty = difficulty switch
+                        CluelessCrosswords.Difficulty cluelessDifficulty = difficulty switch
                         {
-                            "Easy" => CluelessCrossword.Difficulty.Easy,
-                            "Normal" => CluelessCrossword.Difficulty.Normal,
-                            "Hard" => CluelessCrossword.Difficulty.Hard,
+                            "Easy" => CluelessCrosswords.Difficulty.Easy,
+                            "Normal" => CluelessCrosswords.Difficulty.Normal,
+                            "Hard" => CluelessCrosswords.Difficulty.Hard,
                             _ => throw new NotImplementedException(),
                         };
-                        var clueless = new CluelessCrossword.CluelessCrosswords(
+                        var clueless = new CluelessCrosswords.Games(
                             numberOfPages,
                             cluelessDifficulty);
 
-                        byteArray = CluelessCrossword.PDF.Produce.PDF(clueless);
+                        byteArray = CluelessCrosswords.PDF.Produce.GamesPDF(clueless, Properties.Resources.notomono);
 
                         try
                         {
@@ -84,7 +84,7 @@ namespace LargePrintPuzzles.WPF
                         pdfFullPath = System.IO.Path.Combine(
                             Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
                             pdfFileName);
-                        byteArray = CluelessCrossword.PDF.Produce.ShortWords();
+                        byteArray = CluelessCrosswords.PDF.Produce.ShortWords(Properties.Resources.notomono);
                         try
                         {
                             File.WriteAllBytes(pdfFullPath, byteArray);

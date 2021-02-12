@@ -1,6 +1,7 @@
-﻿using CluelessCrossword;
+﻿using CluelessCrosswords;
 
 using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace LargePrintPuzzles.Terminal
@@ -9,24 +10,33 @@ namespace LargePrintPuzzles.Terminal
     {
         private static void Main()
         {
-            CluelessCrosswords clueless1 = new CluelessCrosswords(1, Difficulty.Normal);
+            Games clueless1 = new Games(1, Difficulty.Normal);
             foreach (var item in clueless1)
             {
                 Console.WriteLine(item);
             }
 
-            //CluelessCrosswords clueless2 = new CluelessCrosswords(20, Difficulty.Normal);
+            //Games clueless2 = new Games(20, Difficulty.Normal);
             //foreach (var item in clueless2)
             //{
             //    Console.WriteLine(item);
             //}
 
             var homeDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            var cluelessPDF = CluelessCrossword.PDF.Produce.PDF(clueless1);
-            File.WriteAllBytes(Path.Combine(homeDir, "./clueless.pdf"), cluelessPDF);
 
-            var shortPDF = CluelessCrossword.PDF.Produce.ShortWords();
-            File.WriteAllBytes(Path.Combine(homeDir, "./short.pdf"), shortPDF);
+            var cluelessPDF = CluelessCrosswords.PDF.Produce.GamesPDF(clueless1, Properties.Resources.notomono);
+            File.WriteAllBytes(Path.Combine(homeDir, "./LPP-CluelessCrosswords.pdf"), cluelessPDF);
+
+            var shortPDF = CluelessCrosswords.PDF.Produce.ShortWords(Properties.Resources.notomono);
+            File.WriteAllBytes(Path.Combine(homeDir, "./LPP-ShortWords.pdf"), shortPDF);
+
+            Process process = new Process();
+            process.StartInfo.UseShellExecute = true;
+            process.StartInfo.FileName = Path.Combine(homeDir, "./LPP-ShortWords.pdf");
+            process.Start();
+
+            process.StartInfo.FileName = Path.Combine(homeDir, "./LPP-CluelessCrosswords.pdf");
+            process.Start();
         }
     }
 }

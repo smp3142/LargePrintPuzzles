@@ -1,4 +1,4 @@
-using CluelessCrossword;
+using CluelessCrosswords;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -11,26 +11,26 @@ namespace UnitTests
     [TestClass]
     public class CluelessCrosswordTests
     {
-        private static CluelessCrosswords SingleCluelessCrosswordsNormal;
-        private static CluelessCrosswords SingleCluelessCrosswordsEasy;
-        private static CluelessCrosswords SingleCluelessCrosswordsHard;
-        private static CluelessCrosswords cluelessCrosswordsNormal;
-        private static CluelessCrosswords cluelessCrosswordsEasy;
-        private static CluelessCrosswords cluelessCrosswordsHard;
-        private static CluelessCrosswords[] cluelessesGroup;
+        private static Games SingleCluelessCrosswordsNormal;
+        private static Games SingleCluelessCrosswordsEasy;
+        private static Games SingleCluelessCrosswordsHard;
+        private static Games cluelessCrosswordsNormal;
+        private static Games cluelessCrosswordsEasy;
+        private static Games cluelessCrosswordsHard;
+        private static Games[] cluelessesGroup;
 
         [AssemblyInitialize]
 #pragma warning disable IDE0060 // Remove unused parameter - Required signature.
         public static void Initialize(TestContext t)
 #pragma warning restore IDE0060 // Remove unused parameter
         {
-            SingleCluelessCrosswordsEasy = new CluelessCrosswords(1, Difficulty.Normal);
-            SingleCluelessCrosswordsNormal = new CluelessCrosswords(1, Difficulty.Easy);
-            SingleCluelessCrosswordsHard = new CluelessCrosswords(1, Difficulty.Hard);
-            cluelessCrosswordsEasy = new CluelessCrosswords(10, Difficulty.Normal);
-            cluelessCrosswordsNormal = new CluelessCrosswords(10, Difficulty.Easy);
-            cluelessCrosswordsHard = new CluelessCrosswords(10, Difficulty.Hard);
-            cluelessesGroup = new CluelessCrosswords[] { SingleCluelessCrosswordsEasy,
+            SingleCluelessCrosswordsEasy = new Games(1, Difficulty.Normal);
+            SingleCluelessCrosswordsNormal = new Games(1, Difficulty.Easy);
+            SingleCluelessCrosswordsHard = new Games(1, Difficulty.Hard);
+            cluelessCrosswordsEasy = new Games(10, Difficulty.Normal);
+            cluelessCrosswordsNormal = new Games(10, Difficulty.Easy);
+            cluelessCrosswordsHard = new Games(10, Difficulty.Hard);
+            cluelessesGroup = new Games[] { SingleCluelessCrosswordsEasy,
                 SingleCluelessCrosswordsNormal,
                 SingleCluelessCrosswordsHard,
                 cluelessCrosswordsEasy,
@@ -41,7 +41,7 @@ namespace UnitTests
         [TestMethod]
         public void KeysAreRightLength()
         {
-            foreach (CluelessCrosswords clueless in cluelessesGroup)
+            foreach (Games clueless in cluelessesGroup)
             {
                 foreach (Puzzle puzzle in clueless)
                 {
@@ -53,7 +53,7 @@ namespace UnitTests
         [TestMethod]
         public void KeysHaveAllLetters()
         {
-            foreach (CluelessCrosswords clueless in cluelessesGroup)
+            foreach (Games clueless in cluelessesGroup)
             {
                 foreach (Puzzle puzzle in clueless)
                 {
@@ -68,7 +68,7 @@ namespace UnitTests
         [TestMethod]
         public void KeysHaveNoRepeats()
         {
-            foreach (CluelessCrosswords clueless in cluelessesGroup)
+            foreach (Games clueless in cluelessesGroup)
             {
                 foreach (Puzzle puzzle in clueless)
                 {
@@ -83,7 +83,7 @@ namespace UnitTests
         [TestMethod]
         public void KeysAreShuffled()
         {
-            foreach (CluelessCrosswords clueless in cluelessesGroup)
+            foreach (Games clueless in cluelessesGroup)
             {
                 foreach (Puzzle puzzle in clueless)
                 {
@@ -101,7 +101,7 @@ namespace UnitTests
         [TestMethod]
         public void ManyLettersAreUsed()
         {
-            foreach (CluelessCrosswords clueless in cluelessesGroup)
+            foreach (Games clueless in cluelessesGroup)
             {
                 foreach (Puzzle puzzle in clueless)
                 {
@@ -118,16 +118,16 @@ namespace UnitTests
         [TestMethod]
         public void BoardMostlyFilled()
         {
-            foreach (CluelessCrosswords clueless in cluelessesGroup)
+            foreach (Games clueless in cluelessesGroup)
             {
                 foreach (Puzzle puzzle in clueless)
                 {
                     int empty = 0;
                     foreach (string item in puzzle.Solution)
                     {
-                        if (item == CluelessCrosswords.EMPTYCHAR) { empty++; }
+                        if (item == Games.EMPTYCHAR) { empty++; }
                     }
-                    Assert.IsTrue(empty < (int)(CluelessCrosswords.ROWS * CluelessCrosswords.COLS / 2.0), $"There are {empty} cells empty.");
+                    Assert.IsTrue(empty < (int)(Games.ROWS * Games.COLS / 2.0), $"There are {empty} cells empty.");
                 }
             }
         }
@@ -135,14 +135,14 @@ namespace UnitTests
         [TestMethod]
         public void LettersAreInKey()
         {
-            foreach (CluelessCrosswords clueless in cluelessesGroup)
+            foreach (Games clueless in cluelessesGroup)
             {
                 foreach (Puzzle puzzle in clueless)
                 {
                     foreach (string letter in puzzle.Solution)
                     {
-                        Assert.IsTrue(letter == CluelessCrosswords.EMPTYCHAR || puzzle.Key.Contains(letter),
-                            $"{letter} not in key nor is it {CluelessCrosswords.EMPTYCHAR}.");
+                        Assert.IsTrue(letter == Games.EMPTYCHAR || puzzle.Key.Contains(letter),
+                            $"{letter} not in key nor is it {Games.EMPTYCHAR}.");
                     }
                 }
             }
@@ -153,7 +153,7 @@ namespace UnitTests
         {
             int total;
             List<string> vowels = new List<string>() { " A", " E", " I", " O", " U" };
-            foreach (CluelessCrosswords clueless in cluelessesGroup)
+            foreach (Games clueless in cluelessesGroup)
             {
                 foreach (Puzzle puzzle in clueless)
                 {
@@ -171,7 +171,7 @@ namespace UnitTests
         public void HintsAreUnique()
         {
             List<string> used = new List<string>();
-            foreach (CluelessCrosswords clueless in cluelessesGroup)
+            foreach (Games clueless in cluelessesGroup)
             {
                 foreach (Puzzle puzzle in clueless)
                 {
@@ -188,7 +188,7 @@ namespace UnitTests
         [TestMethod]
         public void OnlyHintsInGameBoard()
         {
-            foreach (CluelessCrosswords clueless in cluelessesGroup)
+            foreach (Games clueless in cluelessesGroup)
             {
                 foreach (Puzzle puzzle in clueless)
                 {
@@ -199,7 +199,7 @@ namespace UnitTests
                     }
                     foreach (string item in puzzle.GameBoard)
                     {
-                        if (!(item == CluelessCrosswords.EMPTYCHAR) && char.IsLetter(item[1])) { Assert.IsTrue(used.Contains(item)); }
+                        if (!(item == Games.EMPTYCHAR) && char.IsLetter(item[1])) { Assert.IsTrue(used.Contains(item)); }
                     }
                 }
             }
@@ -208,17 +208,17 @@ namespace UnitTests
         [TestMethod]
         public void GameBoardLettersMatchSolution()
         {
-            foreach (CluelessCrosswords clueless in cluelessesGroup)
+            foreach (Games clueless in cluelessesGroup)
             {
                 foreach (Puzzle puzzle in clueless)
                 {
-                    for (int row = 0; row < CluelessCrosswords.ROWS; row++)
+                    for (int row = 0; row < Games.ROWS; row++)
                     {
-                        for (int col = 0; col < CluelessCrosswords.COLS; col++)
+                        for (int col = 0; col < Games.COLS; col++)
                         {
-                            if (puzzle.GameBoard[row, col].Trim() == CluelessCrosswords.EMPTYCHAR)
+                            if (puzzle.GameBoard[row, col].Trim() == Games.EMPTYCHAR)
                             {
-                                Assert.IsTrue(puzzle.Solution[row, col] == CluelessCrosswords.EMPTYCHAR);
+                                Assert.IsTrue(puzzle.Solution[row, col] == Games.EMPTYCHAR);
                             }
                             else if (char.IsLetter(puzzle.GameBoard[row, col][1]))
                             {

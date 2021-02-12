@@ -10,11 +10,10 @@
 
   <ItemGroup>
     <PackageReference Include="itext7" Version="7.1.14" />
-    <PackageReference Include="itext7.pdfhtml" Version="3.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CluelessCrossword\CluelessCrossword.csproj" />
+    <ProjectReference Include="..\CluelessCrossword\CluelessCrosswords.csproj" />
   </ItemGroup>
 
   <ItemGroup>
