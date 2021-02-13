@@ -4,7 +4,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 
 using System;
 
-namespace LPPuzzles.Ava
+namespace LPPuzzlesAva
 {
     internal class Program
     {

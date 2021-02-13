@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPPuzzles", "LPPuzzles\LPPuzzles.csproj", "{BA1522E2-D3DF-4DFA-A986-6C26C32985C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LPPuzzles", "LPPuzzles\LPPuzzles.csproj", "{BA1522E2-D3DF-4DFA-A986-6C26C32985C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordData", "WordData\WordData.csproj", "{971AE67C-BB7A-4909-AD5C-AED702CF4464}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordData", "WordData\WordData.csproj", "{971AE67C-BB7A-4909-AD5C-AED702CF4464}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CluelessCrosswords", "CluelessCrosswords\CluelessCrosswords.csproj", "{6D5F0144-C16E-410B-9F74-93DF440C9A51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CluelessCrosswords", "CluelessCrosswords\CluelessCrosswords.csproj", "{6D5F0144-C16E-410B-9F74-93DF440C9A51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CluelessCrosswords.PDF", "CluelessCrosswords.PDF\CluelessCrosswords.PDF.csproj", "{FB62564A-AAEF-42EC-8B4C-AC526D23803E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CluelessCrosswords.PDF", "CluelessCrosswords.PDF\CluelessCrosswords.PDF.csproj", "{FB62564A-AAEF-42EC-8B4C-AC526D23803E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPPuzzles.Wpf", "LPPuzzles.Wpf\LPPuzzles.Wpf.csproj", "{13152B27-BCB4-4443-A368-858A4B71292C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LPPuzzlesWpf", "LPPuzzlesWpf\LPPuzzlesWpf.csproj", "{13152B27-BCB4-4443-A368-858A4B71292C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPPuzzles.Ava", "LPPuzzles.Ava\LPPuzzles.Ava.csproj", "{666DCADA-B13B-40E3-9227-2B5F796BB149}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LPPuzzlesAva", "LPPuzzlesAva\LPPuzzlesAva.csproj", "{666DCADA-B13B-40E3-9227-2B5F796BB149}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPPuzzles.ConsoleApp", "LPPuzzles.ConsoleApp\LPPuzzles.ConsoleApp.csproj", "{8E54AD30-3E7B-43D3-95A2-D61072ADC06C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LPPuzzles.ConsoleApp", "LPPuzzles.ConsoleApp\LPPuzzles.ConsoleApp.csproj", "{8E54AD30-3E7B-43D3-95A2-D61072ADC06C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{AA7A839D-13F1-4A79-8F24-7060BEFD9406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{AA7A839D-13F1-4A79-8F24-7060BEFD9406}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

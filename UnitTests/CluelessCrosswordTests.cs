@@ -110,7 +110,7 @@ namespace UnitTests
                     {
                         if (!uniqueLetters.Contains(letter)) { uniqueLetters.Add(letter); }
                     }
-                    Assert.IsTrue(uniqueLetters.Count > 18);
+                    Assert.IsTrue(uniqueLetters.Count > 17, $"Only {uniqueLetters.Count} letters were used.");
                 }
             }
         }

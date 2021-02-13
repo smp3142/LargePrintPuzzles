@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 // Please note, this is just a copy of the WPF app and is not idiomatic Avalonia code.
 
-namespace LPPuzzles.Ava
+namespace LPPuzzlesAva
 {
     public class MainWindow : Window
     {

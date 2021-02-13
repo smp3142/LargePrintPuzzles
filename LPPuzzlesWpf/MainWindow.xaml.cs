@@ -6,7 +6,7 @@ using System.Windows;
 
 using System.Windows.Navigation;
 
-namespace LPPuzzles.Wpf
+namespace LPPuzzlesWpf
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

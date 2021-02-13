@@ -1,7 +1,7 @@
-﻿<Application x:Class="LPPuzzles.Wpf.App"
+﻿<Application x:Class="LPPuzzlesWpf.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:LPPuzzles.Wpf"
+             xmlns:local="clr-namespace:LPPuzzlesWpf"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
     </Application.Resources>

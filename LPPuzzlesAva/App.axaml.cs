@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
-namespace LPPuzzles.Ava
+namespace LPPuzzlesAva
 {
     public class App : Application
     {
