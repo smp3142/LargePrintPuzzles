@@ -135,7 +135,7 @@ namespace CluelessCrosswords.PDF
         {
             Table table = new Table(new float[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 });
             for (int i = 0; i < Games.ROWS; i++)
-            {//TODO: Add Key and Solution
+            {
                 table.AddCell(AddKey(i * 2, puzzle.Key[i * 2]));
                 table.AddCell(AddKey(i * 2 + 1, puzzle.Key[i * 2 + 1]));
 

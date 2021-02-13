@@ -14,15 +14,15 @@ namespace LPPuzzles.Ava
 {
     public class MainWindow : Window
     {
-        private int[] numberOfPages;
-        private ComboBox NumberOfPages;
-        private ComboBox GameType;
-        private ComboBox Difficulty;
-        private CheckBox AutoOpenPDF;
-        private Button btnMakePuzzle;
-        private TextBlock txtFileStatus;
-        private TextBlock fileUrlDisplay;
-        private ProgressBar progressBar;
+        private readonly int[] numberOfPages;
+        private readonly ComboBox NumberOfPages;
+        private readonly ComboBox GameType;
+        private readonly ComboBox Difficulty;
+        private readonly CheckBox AutoOpenPDF;
+        private readonly Button btnMakePuzzle;
+        private readonly TextBlock txtAppStatus;
+        private readonly TextBox txtFileCreation;
+        private readonly ProgressBar progressBar;
 
         public MainWindow()
         {
@@ -35,8 +35,8 @@ namespace LPPuzzles.Ava
             Difficulty = this.Find<ComboBox>("Difficulty");
             AutoOpenPDF = this.Find<CheckBox>("AutoOpenPDF");
             btnMakePuzzle = this.Find<Button>("btnMakePuzzle");
-            txtFileStatus = this.Find<TextBlock>("txtFileStatus");
-            fileUrlDisplay = this.Find<TextBlock>("fileUrlDisplay");
+            txtAppStatus = this.Find<TextBlock>("txtAppStatus");
+            txtFileCreation = this.Find<TextBox>("txtFileCreation");
             progressBar = this.Find<ProgressBar>("progressBar");
 
             numberOfPages = new int[20];
@@ -59,8 +59,8 @@ namespace LPPuzzles.Ava
         private async void MakePuzzle_Click(object sender, RoutedEventArgs e)
         {
             btnMakePuzzle.IsEnabled = false;
-            txtFileStatus.Text = "Making File";
-            fileUrlDisplay.IsVisible = false;
+            txtAppStatus.Text = "Making File";
+            txtFileCreation.IsVisible = false;
             progressBar.IsVisible = true;
 
             byte[]? byteArray = null;
@@ -71,6 +71,7 @@ namespace LPPuzzles.Ava
             string? difficulty = ComboBoxContent(Difficulty);
             int numberOfPages = NumberOfPages.SelectedIndex + 1;
 
+            string? result = null;
             await Task.Factory.StartNew(() =>
             {
                 switch (gameType)
@@ -96,7 +97,7 @@ namespace LPPuzzles.Ava
                         catch (Exception ex) when (ex is ArgumentException or PathTooLongException
                                                    or DirectoryNotFoundException or IOException or UnauthorizedAccessException)
                         {
-                            //Todo: Display error
+                            result = ex.Message;
                             pdfFileName = null;
                             return;
                         }
@@ -111,26 +112,30 @@ namespace LPPuzzles.Ava
                         catch (Exception ex) when (ex is ArgumentException or PathTooLongException
                                                    or DirectoryNotFoundException or IOException or UnauthorizedAccessException)
                         {
-                            //Todo: Display error
+                            result = $"{ex.Message}";
                             pdfFileName = null;
                             return;
                         }
                         break;
                 }
+                result = null;
             }
                 );
 
             btnMakePuzzle.IsEnabled = true;
-            txtFileStatus.Text = "Ready";
+            txtAppStatus.Text = "Ready";
             progressBar.IsVisible = false;
 
-            if (pdfFileName != null)
+            if (result == null)
             {
-                txtFileStatus.Text = "PDF File";
-                //UriBuilder uriBuilder = new UriBuilder(pdfFullPath);
-                //fileUrl.NavigateUri = uriBuilder.Uri;
-                //fileUrlDisplay.Visibility = Visibility.Visible;
-                if (AutoOpenPDF.IsChecked.GetValueOrDefault()) { OpenPdf(pdfFullPath); }
+                txtFileCreation.Text = $"File location\n{pdfFullPath}";
+                txtFileCreation.IsVisible = true;
+                if (AutoOpenPDF.IsChecked.GetValueOrDefault() && pdfFullPath != null) { OpenPdf(pdfFullPath); }
+            }
+            else
+            {
+                txtFileCreation.Text = result;
+                txtFileCreation.IsVisible = true;
             }
 
             e.Handled = true;

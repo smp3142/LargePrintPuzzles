@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="420"
         x:Class="LPPuzzles.Ava.MainWindow"
  Title="Large Print Puzzles" Height="400" Width="420" CanResize="False" FontSize="16">
 
@@ -44,19 +44,21 @@
               MaxDropDownHeight="200" />
 
     <CheckBox x:Name="AutoOpenPDF" Grid.Row="3" Grid.Column="1"
-              VerticalAlignment="Center" HorizontalAlignment="Right"
+              VerticalAlignment="Center" HorizontalAlignment="Left"
               IsChecked="True" />
 
     <Button x:Name="btnMakePuzzle" Grid.Row="4" Grid.ColumnSpan="2"
             Content="Make PDF"
             VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="MakePuzzle_Click" />
 
-    <TextBlock x:Name="txtFileStatus" Text="Ready" Grid.Row="5" Grid.ColumnSpan="2"
+    <TextBlock x:Name="txtAppStatus" Text="Ready" Grid.Row="5" Grid.ColumnSpan="2"
                HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+
     <ProgressBar x:Name="progressBar" Grid.Row="6" Grid.ColumnSpan="2" VerticalAlignment="Center"
                  IsIndeterminate="True"  IsVisible="False" />
-    <TextBlock x:Name="fileUrlDisplay" Grid.Row="6" Grid.ColumnSpan="2"
-               IsVisible="False" HorizontalAlignment="Center">
-    </TextBlock>
+
+    <TextBox x:Name="txtFileCreation" Grid.Row="6" Grid.ColumnSpan="2"
+             IsVisible="False" HorizontalAlignment="Center" IsReadOnly="True">
+    </TextBox>
   </Grid>
 </Window>
