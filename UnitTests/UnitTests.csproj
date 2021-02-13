@@ -14,9 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CluelessCrossword.PDF\CluelessCrossword.PDF.csproj" />
-    <ProjectReference Include="..\CluelessCrossword\CluelessCrosswords.csproj" />
-    <ProjectReference Include="..\GamesData\GamesData.csproj" />
+    <ProjectReference Include="..\CluelessCrosswords\CluelessCrosswords.csproj" />
+    <ProjectReference Include="..\WordData\WordData.csproj" />
   </ItemGroup>
 
 </Project>
