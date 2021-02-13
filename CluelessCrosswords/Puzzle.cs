@@ -1,5 +1,7 @@
 ﻿using System.Text;
 
+// TODO: !!! Switch letters to chars and move formatting to PDF class
+
 namespace CluelessCrosswords
 {
     public struct Puzzle
