@@ -38,7 +38,7 @@
     <CFBundleVersion>0.1.0</CFBundleVersion>
     <CFBundlePackageType>AAPL</CFBundlePackageType>
     <CFBundleExecutable>LPPuzzles.Ava</CFBundleExecutable>
-    <CFBundleIconFile>LPPuzzles.Ava</CFBundleIconFile>
+    <CFBundleIconFile>LPPuzzles.icns</CFBundleIconFile>
     <NSPrincipalClass>NSApplication</NSPrincipalClass>
     <NSHighResolutionCapable>true</NSHighResolutionCapable>
     <CFBundleShortVersionString>0.1</CFBundleShortVersionString>
