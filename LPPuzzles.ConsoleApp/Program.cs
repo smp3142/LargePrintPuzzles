@@ -16,11 +16,11 @@ namespace LPPuzzles.ConsoleApp
                 Console.WriteLine(item);
             }
 
-            //Games clueless2 = new Games(20, Difficulty.Normal);
-            //foreach (var item in clueless2)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            Games clueless2 = new Games(20, Difficulty.Normal);
+            foreach (var item in clueless2)
+            {
+                Console.WriteLine(item);
+            }
 
             var homeDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 

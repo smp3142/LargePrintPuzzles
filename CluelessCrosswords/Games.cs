@@ -12,7 +12,6 @@ namespace CluelessCrosswords
     public class Games : IEnumerable
     {
         public Puzzle[] Puzzles { get; private set; }
-        public List<string> usedWords;
         public readonly List<string> wordSource;
         public const string EMPTYCHAR = ".";
         public const int ROWS = 13;
@@ -26,7 +25,6 @@ namespace CluelessCrosswords
         {
             Puzzles = new Puzzle[numberOfPuzzles];
             wordSource = GamesData.WordData.AllWords;
-            usedWords = new List<string>();
             random = new Random();
 
             for (int i = 0; i < numberOfPuzzles; i++)
@@ -37,7 +35,7 @@ namespace CluelessCrosswords
                 Puzzles[i].GameBoard = new string[ROWS, COLS];
 
                 MakeKey(Puzzles[i].Key);
-                MakeSolution(Puzzles[i], false);
+                MakeSolution(Puzzles[i]);
                 MakeHints(Puzzles[i], difficulty);
                 MakeGameBoard(Puzzles[i]);
             }
@@ -97,7 +95,7 @@ namespace CluelessCrosswords
             }
         }
 
-        private void MakeSolution(Puzzle puzzle, bool customWords)
+        private void MakeSolution(Puzzle puzzle)
         {
             for (int row = 0; row < ROWS; row++)
             {
@@ -107,16 +105,9 @@ namespace CluelessCrosswords
                 }
             }
 
-            if (customWords)
-            {
-                AddRandomWords(puzzle, wordSource, wordSource.Count);
-            }
-            else
-            {
-                AddRandomWords(puzzle, WordData.InterestingWords, 6);
-                AddRandomWords(puzzle, wordSource, TriesToAddWord);
-                AddRandomWords(puzzle, WordData.ShortWords, TriesToAddWord * 2);
-            }
+            AddRandomWords(puzzle, WordData.InterestingWords, 6);
+            AddRandomWords(puzzle, wordSource, TriesToAddWord);
+            AddRandomWords(puzzle, WordData.ShortWords, TriesToAddWord * 2);
         }
 
         private void AddRandomWords(Puzzle puzzle, List<string> wordsToAdd, int tries)
@@ -164,7 +155,6 @@ namespace CluelessCrosswords
                     puzzle.Solution[rowStart + i, colStart] = wordToAdd[i].ToString();
                 }
             }
-            if (wordToAdd.Length > 3) { usedWords.Add(wordToAdd); }
         }
 
         private bool IsValidLocation(int rowStart, int colStart, bool addToRow, string wordToAdd, Puzzle puzzle)
@@ -243,12 +233,7 @@ namespace CluelessCrosswords
 
         private string GetWord(List<string> wordsList)
         {
-            int index;
-            while (true)
-            {
-                index = random.Next(0, wordsList.Count);
-                if (usedWords.Count < (wordsList.Count / 2) || !usedWords.Contains(wordsList[index])) { return wordsList[index]; }
-            }
+            return wordsList[random.Next(0, wordsList.Count)];
         }
 
         private void MakeKey(string[] key)
