@@ -5,6 +5,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>icon.ico</ApplicationIcon>
+    <Authors>smp3142</Authors>
+    <Company>Logic and Pencils</Company>
+    <Product>LPPuzzles</Product>
+    <Version>0.1.0</Version>
+    <PackageId>LPPuzzles</PackageId>
+    <PackageLicenseFile>agpl.txt</PackageLicenseFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <AssemblyName>LPPuzzles</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +33,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\agpl.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\misc\icons\windows\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
