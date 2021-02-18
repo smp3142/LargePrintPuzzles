@@ -76,11 +76,11 @@ namespace CluelessCrosswords
             }
             foreach (string letter in unUsedLetters)
             {
-                puzzle.Hints[Array.IndexOf(puzzle.Key, letter)] = " " + letter;
+                puzzle.Hints[Array.IndexOf(puzzle.Key, letter)] = letter;
             }
             string[] vowels = { "A", "E", "I", "O", "U" };
             string vowel = vowels[random.Next(vowels.Length)];
-            puzzle.Hints[Array.IndexOf(puzzle.Key, vowel)] = " " + vowel;
+            puzzle.Hints[Array.IndexOf(puzzle.Key, vowel)] = vowel;
 
             foreach (string v in vowels)
             {
@@ -91,7 +91,7 @@ namespace CluelessCrosswords
             {
                 string letter = usedLetters[random.Next(usedLetters.Count)];
                 usedLetters.Remove(letter);
-                puzzle.Hints[Array.IndexOf(puzzle.Key, letter)] = " " + letter;
+                puzzle.Hints[Array.IndexOf(puzzle.Key, letter)] = letter;
             }
         }
 

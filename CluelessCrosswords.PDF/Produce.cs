@@ -165,7 +165,7 @@ namespace CluelessCrosswords.PDF
         private static Paragraph AddLetter(Puzzle puzzle, string letter)
         {
             Paragraph p = new Paragraph($"\u00A0{letter}\u00A0");
-            if (puzzle.Hints.Contains(" " + letter))
+            if (puzzle.Hints.Contains(letter))
             {
                 p.SetFontColor(ColorConstants.LIGHT_GRAY);
                 p.SetLineThrough();

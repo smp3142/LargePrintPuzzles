@@ -152,7 +152,7 @@ namespace UnitTests
         public void HintsHaveVowel()
         {
             int total;
-            List<string> vowels = new List<string>() { " A", " E", " I", " O", " U" };
+            List<string> vowels = new List<string>() { "A", "E", "I", "O", "U" };
             foreach (Games clueless in cluelessesGroup)
             {
                 foreach (Puzzle puzzle in clueless)
@@ -195,11 +195,11 @@ namespace UnitTests
                     List<string> used = new List<string>();
                     foreach (string item in puzzle.Hints)
                     {
-                        if (char.IsLetter(item[1])) { used.Add(item); }
+                        if (char.IsLetter(item[0])) { used.Add(item); }
                     }
                     foreach (string item in puzzle.GameBoard)
                     {
-                        if (!(item == Games.EMPTYCHAR) && char.IsLetter(item[1])) { Assert.IsTrue(used.Contains(item)); }
+                        if (!(item == Games.EMPTYCHAR) && char.IsLetter(item[0])) { Assert.IsTrue(used.Contains(item)); }
                     }
                 }
             }
@@ -216,13 +216,13 @@ namespace UnitTests
                     {
                         for (int col = 0; col < Games.COLS; col++)
                         {
-                            if (puzzle.GameBoard[row, col].Trim() == Games.EMPTYCHAR)
+                            if (puzzle.GameBoard[row, col] == Games.EMPTYCHAR)
                             {
                                 Assert.IsTrue(puzzle.Solution[row, col] == Games.EMPTYCHAR);
                             }
-                            else if (char.IsLetter(puzzle.GameBoard[row, col][1]))
+                            else if (char.IsLetter(puzzle.GameBoard[row, col][0]))
                             {
-                                Assert.IsTrue(" " + puzzle.Solution[row, col] == puzzle.GameBoard[row, col]);
+                                Assert.IsTrue(puzzle.Solution[row, col] == puzzle.GameBoard[row, col]);
                             }
                         }
                     }

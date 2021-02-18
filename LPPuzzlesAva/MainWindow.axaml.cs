@@ -153,19 +153,6 @@ namespace LPPuzzlesAva
 
         private void OpenPdf(string pdfFullPath)
         {
-            //string localFile = fileUrl.NavigateUri.LocalPath;
-            //if (!Directory.Exists(System.IO.Path.GetDirectoryName(localFile)))
-            //{
-            //    MessageBox.Show($"Unable to access {System.IO.Path.GetDirectoryName(localFile)}",
-            //                    "Directory Access Error");
-            //    return;
-            //}
-            //if (!File.Exists(localFile))
-            //{
-            //    MessageBox.Show($"{localFile} has been moved, renamed, or deleted.",
-            //                    "File Access Error");
-            //    return;
-            //}
             Process process = new Process();
             process.StartInfo.UseShellExecute = true;
             process.StartInfo.FileName = pdfFullPath;
